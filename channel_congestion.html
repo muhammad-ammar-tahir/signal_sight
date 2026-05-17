@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: #131821;
+            backdrop-filter: blur(15px);
+            border: 1px solid #1e2532;
+        }
+        .signal-curve {
+            clip-path: ellipse(50% 100% at 50% 100%);
+        }
+        body {
+            background-color: #0d1516;
+            background-image: radial-gradient(circle at 50% 50%, #1a2123 0%, #0d1516 100%);
+        }
+    </style>
+<!-- Use the provided Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#f0dbff",
+                    "on-secondary": "#490080",
+                    "secondary-container": "#6f00be",
+                    "on-surface": "#dce4e6",
+                    "on-primary-container": "#005f6d",
+                    "on-tertiary-fixed-variant": "#5b4300",
+                    "on-tertiary-container": "#6f5200",
+                    "surface-container": "#1a2123",
+                    "primary-container": "#00e0ff",
+                    "on-primary-fixed": "#001f25",
+                    "secondary-fixed-dim": "#ddb7ff",
+                    "on-secondary-fixed-variant": "#6900b3",
+                    "on-primary-fixed-variant": "#004e5a",
+                    "surface": "#0d1516",
+                    "tertiary-fixed-dim": "#f7be27",
+                    "error": "#ffb4ab",
+                    "surface-bright": "#333a3c",
+                    "on-secondary-container": "#d6a9ff",
+                    "tertiary-fixed": "#ffdf9d",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#2a3233",
+                    "surface-container-lowest": "#080f11",
+                    "on-tertiary": "#3f2e00",
+                    "surface-tint": "#00daf8",
+                    "on-error-container": "#ffdad6",
+                    "error-container": "#93000a",
+                    "primary-fixed-dim": "#00daf8",
+                    "on-tertiary-fixed": "#251a00",
+                    "on-secondary-fixed": "#2c0051",
+                    "surface-container-low": "#161d1f",
+                    "primary-fixed": "#a5eeff",
+                    "outline": "#859397",
+                    "on-background": "#dce4e6",
+                    "tertiary-container": "#fec42e",
+                    "surface-dim": "#0d1516",
+                    "on-primary": "#00363f",
+                    "surface-variant": "#2f3638",
+                    "primary": "#baf2ff",
+                    "tertiary": "#ffe6b6",
+                    "surface-container-high": "#242b2d",
+                    "background": "#0d1516",
+                    "surface-container-highest": "#2f3638",
+                    "on-surface-variant": "#bac9cd",
+                    "outline-variant": "#3b494c",
+                    "secondary": "#ddb7ff",
+                    "inverse-primary": "#006877",
+                    "inverse-surface": "#dce4e6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin": "20px",
+                    "stack-md": "16px",
+                    "gutter": "16px",
+                    "unit": "4px",
+                    "stack-lg": "32px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "data-mono": ["monospace"],
+                    "label-tech": ["Inter"],
+                    "headline-md": ["Space Grotesk"],
+                    "display-lg": ["Space Grotesk"],
+                    "body-base": ["Inter"]
+            },
+            "fontSize": {
+                    "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "label-tech": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-base": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body-base min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-5 h-16 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50 shadow-[0_0_15px_rgba(0,224,255,0.1)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-cyan-400">menu</span>
+<h1 class="text-xl font-black tracking-tighter text-cyan-400 uppercase font-['Space_Grotesk']">SignalSight</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-cyan-400 font-data-mono text-xs tracking-widest hidden md:block">SCANNING_ACTIVE</span>
+<span class="material-symbols-outlined text-cyan-400">sensors</span>
+</div>
+</header>
+<main class="mt-20 px-margin flex flex-col gap-stack-lg max-w-6xl mx-auto">
+<!-- Header Section -->
+<section class="flex flex-col gap-unit">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-primary-container rounded-full animate-pulse shadow-[0_0_8px_#00e0ff]"></span>
+<span class="font-label-tech text-primary-fixed uppercase">Real-time Telemetry</span>
+</div>
+<h2 class="font-headline-md text-display-lg text-on-surface">Spectrum Analysis</h2>
+</section>
+<!-- Frequency Tabs -->
+<div class="flex gap-stack-sm p-1 glass-card rounded-xl w-fit">
+<button class="px-6 py-2 rounded-lg font-label-tech text-on-primary-fixed bg-primary-container shadow-[0_0_15px_rgba(0,224,255,0.3)] transition-all">2.4 GHz</button>
+<button class="px-6 py-2 rounded-lg font-label-tech text-slate-500 hover:text-cyan-400 transition-colors">5 GHz</button>
+</div>
+<!-- Channel Congestion Graph (Gaussian Curves) -->
+<div class="glass-card rounded-xl p-stack-lg relative overflow-hidden min-h-[350px] flex flex-col justify-end">
+<div class="absolute top-6 left-6 flex flex-col gap-1">
+<span class="font-label-tech text-slate-500">MODE: SPECTROGRAM_DENSITY</span>
+<span class="font-data-mono text-[10px] text-primary-container/60">REF_LVL: -30dBm</span>
+</div>
+<!-- Graph Visual Area -->
+<div class="relative w-full h-64 flex items-end border-b border-slate-800 gap-0">
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex justify-between pointer-events-none opacity-20">
+<div class="border-l border-slate-700 h-full"></div>
+<div class="border-l border-slate-700 h-full"></div>
+<div class="border-l border-slate-700 h-full"></div>
+<div class="border-l border-slate-700 h-full"></div>
+<div class="border-l border-slate-700 h-full"></div>
+</div>
+<!-- Gaussian Curves (CSS shapes mimicking signals) -->
+<!-- Channel 1 -->
+<div class="relative flex-1 h-full">
+<div class="absolute bottom-0 left-[-20%] w-[140%] h-[60%] bg-gradient-to-t from-orange-500/20 to-transparent signal-curve opacity-40 border-t-2 border-orange-500/30"></div>
+<span class="absolute bottom-[-24px] left-1/2 -translate-x-1/2 font-data-mono text-[10px] text-slate-500">CH1</span>
+</div>
+<!-- Channel 6 (Busy) -->
+<div class="relative flex-1 h-full">
+<div class="absolute bottom-0 left-[-30%] w-[160%] h-[85%] bg-gradient-to-t from-error-container/40 to-transparent signal-curve opacity-60 border-t-2 border-error"></div>
+<div class="absolute bottom-0 left-[-10%] w-[120%] h-[70%] bg-gradient-to-t from-error-container/30 to-transparent signal-curve opacity-40"></div>
+<span class="absolute bottom-[-24px] left-1/2 -translate-x-1/2 font-data-mono text-[10px] text-slate-500">CH6</span>
+</div>
+<!-- Channel 11 (Current Network - Cyan Highlight) -->
+<div class="relative flex-1 h-full">
+<div class="absolute bottom-0 left-[-20%] w-[140%] h-[50%] bg-gradient-to-t from-primary-container/30 to-transparent signal-curve border-t-4 border-primary-container shadow-[0_-10px_20px_rgba(0,224,255,0.2)] z-10"></div>
+<div class="absolute top-[40%] left-1/2 -translate-x-1/2 flex flex-col items-center z-20">
+<span class="bg-primary-container text-on-primary-fixed px-2 py-0.5 rounded font-label-tech text-[10px]">MY_NODE</span>
+<div class="w-0.5 h-12 bg-primary-container/50 border-r border-dashed border-primary-container"></div>
+</div>
+<span class="absolute bottom-[-24px] left-1/2 -translate-x-1/2 font-data-mono text-[10px] text-primary-container">CH11</span>
+</div>
+<!-- Channel 14 -->
+<div class="relative flex-1 h-full">
+<div class="absolute bottom-0 left-[-20%] w-[140%] h-[30%] bg-gradient-to-t from-slate-700/20 to-transparent signal-curve opacity-30 border-t-2 border-slate-600"></div>
+<span class="absolute bottom-[-24px] left-1/2 -translate-x-1/2 font-data-mono text-[10px] text-slate-500">CH14</span>
+</div>
+</div>
+<div class="mt-10 flex justify-between items-center border-t border-slate-800/50 pt-4">
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-error rounded-sm"></div>
+<span class="font-label-tech text-[10px] text-slate-400">CONGESTED</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-primary-container rounded-sm"></div>
+<span class="font-label-tech text-[10px] text-slate-400">ACTIVE</span>
+</div>
+</div>
+<span class="font-data-mono text-[10px] text-slate-600">LATENCY: 12ms</span>
+</div>
+</div>
+<!-- Bottom Widgets Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
+<!-- Congestion Score Widget -->
+<div class="glass-card rounded-xl p-stack-lg flex flex-col items-center justify-center text-center border-l-4 border-l-tertiary-container">
+<span class="font-label-tech text-tertiary-fixed-dim uppercase mb-2">Congestion Score</span>
+<div class="relative">
+<span class="text-6xl font-headline-md font-bold text-on-surface">85</span>
+<span class="text-xl font-headline-md text-slate-500">/100</span>
+</div>
+<p class="text-tertiary mt-2 text-sm font-medium">Critical Overlap Detected</p>
+<div class="w-full bg-slate-800 h-1.5 rounded-full mt-4 overflow-hidden">
+<div class="bg-tertiary-container h-full w-[85%] shadow-[0_0_10px_#fec42e]"></div>
+</div>
+</div>
+<!-- Recommendation Card -->
+<div class="glass-card rounded-xl p-stack-lg md:col-span-2 relative group cursor-pointer border-t-4 border-t-secondary-container">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 text-secondary-fixed-dim mb-1">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-tech uppercase">AI Recommendation</span>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface">Switch to Channel 11</h3>
+</div>
+<button class="bg-secondary-container text-secondary-fixed p-2 rounded-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 max-w-lg">
+                    Current frequency is experiencing 42% packet loss due to neighbor interference on Channel 6. Channel 11 shows minimal noise floor and 94% spectral efficiency.
+                </p>
+<!-- Step-by-Step (Simulated expansion) -->
+<div class="border-t border-slate-800 pt-4 flex flex-col gap-stack-md">
+<div class="flex items-start gap-4">
+<div class="bg-slate-800 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 font-data-mono text-xs text-secondary-fixed">01</div>
+<p class="text-sm text-slate-300">Access Gateway Admin Portal at <span class="text-cyan-400 font-data-mono">192.168.1.1</span></p>
+</div>
+<div class="flex items-start gap-4 opacity-50">
+<div class="bg-slate-800 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 font-data-mono text-xs">02</div>
+<p class="text-sm text-slate-300">Navigate to Wireless Settings &gt; Advanced Radio Configuration</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Tactical Image Placeholder -->
+<div class="w-full h-48 rounded-xl overflow-hidden border border-slate-800 relative">
+<img alt="Tactical Tech Interface" class="w-full h-full object-cover grayscale opacity-40" data-alt="A macro shot of a futuristic hardware motherboard with glowing cyan and purple fiber optic paths and circuitry. The lighting is low-key, emphasizing the luminescent electrical signals flowing through the components. High-tech sensors and metallic textures dominate the frame, creating a sense of elite network engineering and advanced data processing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1cZKrh6zLLlVEFkW3-bWyzg2MdinnYXY7frU7V8_OU-w02vkxAF4KP8iUVmIhIWWfsC8nma0q6hGr4riFB5Hvnkt6EuZK_ScxCqB1KINir-C_O-M4hfjfIKj9_vHsHu-50DnqeY0KWn0hSV5JAPU8vWNGZA5DW_RDJoOQvyeC5KjAF5cfwwcCMCiwXs8J7SvhG1jgQTvaPBV313OAStmNTjcQbVzeaAKPHDgmS3R6CNlWueWqGFxiJXgH_QbPFs1A_BO4BV5ajIM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-4 left-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-cyan-400" data-weight="fill">security</span>
+<span class="font-label-tech text-xs tracking-[0.2em]">ENCRYPTED_STREAM_024</span>
+</div>
+</div>
+</main>
+<!-- NavigationDrawer (Suppressed per "Transactional/Sub-page" rule, using BottomNavBar instead) -->
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-6 pt-3 h-20 bg-[#131821]/90 backdrop-blur-2xl border-t border-slate-800 shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-slate-500 hover:bg-slate-800/50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-widest mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-cyan-400 drop-shadow-[0_0_10px_rgba(0,224,255,0.5)] scale-110" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wifi_tethering</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-widest mt-1">Heatmap</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:bg-slate-800/50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">view_in_ar</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-widest mt-1">AR View</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:bg-slate-800/50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">router</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-widest mt-1">Devices</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:bg-slate-800/50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-widest mt-1">Advisor</span>
+</a>
+</nav>
+</body></html>

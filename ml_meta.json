@@ -1,0 +1,7 @@
+{
+  "is_trained": true,
+  "sample_count": 209,
+  "mae": 6.527,
+  "rmse": 7.748,
+  "last_trained": "2026-05-05T18:36:09.376489"
+}

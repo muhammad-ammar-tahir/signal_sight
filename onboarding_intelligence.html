@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SignalSight - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#f0dbff",
+                        "on-secondary": "#490080",
+                        "secondary-container": "#6f00be",
+                        "on-surface": "#dce4e6",
+                        "on-primary-container": "#005f6d",
+                        "on-tertiary-fixed-variant": "#5b4300",
+                        "on-tertiary-container": "#6f5200",
+                        "surface-container": "#1a2123",
+                        "primary-container": "#00e0ff",
+                        "on-primary-fixed": "#001f25",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "on-primary-fixed-variant": "#004e5a",
+                        "surface": "#0d1516",
+                        "tertiary-fixed-dim": "#f7be27",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#333a3c",
+                        "on-secondary-container": "#d6a9ff",
+                        "tertiary-fixed": "#ffdf9d",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#2a3233",
+                        "surface-container-lowest": "#080f11",
+                        "on-tertiary": "#3f2e00",
+                        "surface-tint": "#00daf8",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#00daf8",
+                        "on-tertiary-fixed": "#251a00",
+                        "on-secondary-fixed": "#2c0051",
+                        "surface-container-low": "#161d1f",
+                        "primary-fixed": "#a5eeff",
+                        "outline": "#859397",
+                        "on-background": "#dce4e6",
+                        "tertiary-container": "#fec42e",
+                        "surface-dim": "#0d1516",
+                        "on-primary": "#00363f",
+                        "surface-variant": "#2f3638",
+                        "primary": "#baf2ff",
+                        "tertiary": "#ffe6b6",
+                        "surface-container-high": "#242b2d",
+                        "background": "#0d1516",
+                        "surface-container-highest": "#2f3638",
+                        "on-surface-variant": "#bac9cd",
+                        "outline-variant": "#3b494c",
+                        "secondary": "#ddb7ff",
+                        "inverse-primary": "#006877",
+                        "inverse-surface": "#dce4e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "20px",
+                        "stack-md": "16px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "data-mono": ["monospace"],
+                        "label-tech": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-base": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "label-tech": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-base": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0d1516;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(0, 224, 255, 0.05) 0%, transparent 70%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e2532' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2v-4h4v-2H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .signal-rings {
+            animation: pulse-ring 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.3; }
+            50% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(0.95); opacity: 0.3; }
+        }
+        .glass-panel {
+            background: rgba(19, 24, 33, 0.8);
+            backdrop-filter: blur(15px);
+            border: 1px solid #1E2532;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-primary-container selection:text-on-primary-fixed">
+<!-- Hero Illustration Section -->
+<main class="relative w-full max-w-4xl px-margin flex flex-col items-center text-center">
+<!-- Minimalist Line Art Illustration -->
+<div class="relative w-full aspect-square max-w-[400px] mb-stack-lg flex items-center justify-center">
+<!-- Animated Radial Rings -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="signal-rings absolute w-full h-full rounded-full border border-primary-fixed-dim/20"></div>
+<div class="signal-rings absolute w-3/4 h-3/4 rounded-full border border-primary-fixed-dim/30" style="animation-delay: 0.5s"></div>
+<div class="signal-rings absolute w-1/2 h-1/2 rounded-full border border-primary-fixed-dim/40" style="animation-delay: 1s"></div>
+</div>
+<!-- Central Signal Core -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-primary-fixed-dim flex items-center justify-center shadow-[0_0_40px_rgba(0,224,255,0.4)]">
+<span class="material-symbols-outlined text-on-primary-fixed text-4xl" data-icon="wifi_tethering">wifi_tethering</span>
+</div>
+<!-- Data Flow Lines -->
+<div class="mt-stack-md flex gap-2">
+<div class="w-1 h-8 bg-primary-fixed-dim/40 rounded-full"></div>
+<div class="w-1 h-12 bg-primary-fixed-dim/60 rounded-full"></div>
+<div class="w-1 h-16 bg-primary-fixed-dim rounded-full shadow-[0_0_10px_rgba(0,224,255,0.5)]"></div>
+<div class="w-1 h-12 bg-primary-fixed-dim/60 rounded-full"></div>
+<div class="w-1 h-8 bg-primary-fixed-dim/40 rounded-full"></div>
+</div>
+</div>
+<!-- Abstract Data Pips -->
+<div class="absolute top-0 right-10 flex flex-col items-center gap-1">
+<span class="text-[8px] font-data-mono text-primary-fixed-dim uppercase tracking-tighter">Scan Mode</span>
+<div class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="space-y-stack-md max-w-lg">
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tighter">
+                Passive Intelligence
+            </h1>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-sm mx-auto">
+                Scan and analyze nearby WiFi networks with zero interference.
+            </p>
+</div>
+<!-- Controls Footer -->
+<div class="mt-16 w-full flex flex-col items-center gap-stack-lg">
+<!-- Progress Dots -->
+<div class="flex gap-3">
+<div class="w-8 h-1.5 rounded-full bg-primary-fixed-dim shadow-[0_0_8px_rgba(0,224,255,0.4)]"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-surface-variant"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-surface-variant"></div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col w-full max-w-xs gap-stack-md">
+<button class="w-full py-4 rounded-xl border border-primary-fixed-dim text-primary-fixed-dim font-label-tech uppercase transition-all duration-300 hover:bg-primary-fixed-dim/10 hover:shadow-[0_0_20px_rgba(0,224,255,0.2)] active:scale-95">
+                    Next
+                </button>
+<button class="w-full py-2 text-on-surface-variant font-label-tech uppercase opacity-60 hover:opacity-100 transition-opacity">
+                    Skip
+                </button>
+</div>
+</div>
+</main>
+<!-- UI Aesthetic Accents (Decorative) -->
+<div class="fixed top-margin left-margin font-data-mono text-[10px] text-primary-fixed-dim/30 pointer-events-none">
+        BOOT_SEQUENCE: 01.A<br/>
+        SYSTEM_READY
+    </div>
+<div class="fixed bottom-margin right-margin font-data-mono text-[10px] text-primary-fixed-dim/30 pointer-events-none text-right">
+        UI_VER: 4.8.2<br/>
+        ENCRYPTION: AES-256
+    </div>
+<!-- Background Elements -->
+<div class="fixed inset-0 pointer-events-none z-[-1]">
+<!-- Subtle glow following mouse position or static -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-fixed-dim/5 rounded-full blur-[120px]"></div>
+</div>
+<!-- Image Prompts for visual consistency -->
+<div class="hidden">
+<img data-alt="A cinematic, high-contrast digital illustration of a glowing holographic signal pulse expanding in concentric circles. The style is ultra-modern sci-fi with thin neon cyan lines and technical data readout overlays. The background is a deep navy-black space with subtle digital grid textures and floating light particles. The overall mood is sophisticated, elite, and technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_kiJQ-d-1fIbFrOENVuGWpM3RxS2iER4bTOKxDuax3_d15KBFn4_hNGI8sxXRwFTsFk8Z5YE1CDOSErwSEu9_H4JtdYD-T9pqoS42RmYmLJbAyC4J9ivK3M2_TQ9xWV-vLWeF4RKoBccytNYzmn_ktoIWuzRs0SlXXXfQw6a_5HqF9lC7NIgIb46UTBujHgCssJUTSayk91qLCI0tdrMq7XzfhyjiJURd4w4_ME9F3fmTOfhbuLnkMriznUJFrBaEBruv5gqHKc4"/>
+</div>
+</body></html>

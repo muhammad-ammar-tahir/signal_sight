@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  signalsight-backend:
+    build: ./backend
+    container_name: signalsight_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - PROJECT_NAME=SignalSight WiFi Intelligence
+      - JWT_SECRET=signalsight-prod-secret-change-me
+      - ADMIN_PASSWORD=super_secure_admin_password
+      - DATABASE_URL=sqlite:///./signalsight.db
+      - LOG_LEVEL=INFO
+    restart: always
